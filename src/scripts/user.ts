@@ -1,8 +1,8 @@
-import { kind, validate } from '../types/kind';
 import { PageScript } from './base';
 
 // https://annict.com/@username
 export class UserProfilePageScript extends PageScript {
+
   get name(): string {
     return 'UserProfilePageScript';
   }
@@ -12,6 +12,7 @@ export class UserProfilePageScript extends PageScript {
   }
 
   bindEvents(): void {
+    // Not implemented yet :(
   }
 }
 
@@ -29,7 +30,9 @@ export class UserRecordsPageScript extends PageScript {
     );
   }
 
-  bindEvents(): void {}
+  bindEvents(): void {
+    // Not implemented yet :(
+  }
 }
 
 // https://annict.com/@username/watching
@@ -46,5 +49,7 @@ export class UserWatchingPageScript extends PageScript {
     );
   }
 
-  bindEvents(): void {}
+  bindEvents(): void {
+    // Not implemented yet :(
+  }
 }
