@@ -31,7 +31,9 @@ export class WorkDetailPageScript extends PageScript {
         const url = 'https://annict.com/works/' + location.pathname.split('/')[2];
         window.open(
           'https://twitter.com/intent/tweet?text=' +
-            encodeURIComponent(workTitle + 'の視聴状況を「' + kind[statusKind] + '」にしました') +
+            encodeURIComponent(
+              workTitle + 'の視聴ステータスを「' + kind[statusKind] + '」にしました',
+            ) +
             '&url=' +
             encodeURIComponent(url),
         );
@@ -44,7 +46,6 @@ export class WorkDetailPageScript extends PageScript {
 // https://annict.com/works/popular
 // https://annict.com/works/newest
 export class WorksListPageScript extends PageScript {
-
   get name(): string {
     return 'WorksListPageScript';
   }
@@ -59,6 +60,46 @@ export class WorksListPageScript extends PageScript {
   }
 
   bindEvents(): void {
-
+    const container = document.querySelectorAll(
+      'body > div > div.l-default__main.d-flex.flex-column > div.l-default__content > div.container.mt-3.u-container-flat > div > div > div > div',
+    )[0];
+    // container.childNodes に含まれる #text を除外 (テキストノードが含まれてしまう理由はわかっていない)
+    const cards = Array.from(container.childNodes).filter(node => node.nodeName !== '#text');
+    cards.forEach(card => {
+      const content = Array.from(card.childNodes).filter(node => node.nodeName !== '#text');
+      const a = content[1];
+      const b = Array.from(a.childNodes).filter(node => node.nodeName !== '#text');
+      const c = b[0] as HTMLAnchorElement;
+      const workTitle = c.getAttribute('title');
+      const workHref = c.getAttribute('href');
+      let workId: string;
+      if (workHref) {
+        workId = workHref.split('/')[2];
+      }
+      const d = content[2];
+      const e = Array.from(d.childNodes).filter(node => node.nodeName !== '#text');
+      const f = Array.from(e[0].childNodes).filter(node => node.nodeName !== '#text');
+      const g = Array.from(f[0].childNodes).filter(node => node.nodeName !== '#text');
+      const ul = g[1] as HTMLUListElement;
+      const li = ul.childNodes;
+      li.forEach(li => {
+        const button = li.childNodes[0] as HTMLButtonElement;
+        const statusKind = button.getAttribute('data-status-kind');
+        button.addEventListener('click', () => {
+          console.log(statusKind);
+          if (!statusKind) return;
+          if (!validate(statusKind)) return;
+          const url = 'https://annict.com/works/' + workId;
+          window.open(
+            'https://twitter.com/intent/tweet?text=' +
+              encodeURIComponent(
+                workTitle + 'の視聴ステータスを「' + kind[statusKind] + '」にしました',
+              ) +
+              '&url=' +
+              encodeURIComponent(url),
+          );
+        });
+      });
+    });
   }
 }
