@@ -1,5 +1,5 @@
 {
-  "name": "webext-template",
+  "name": "webext-annict-intent-tweet",
   "packageManager": "pnpm@8.3.1",
   "author": "iamtakagi",
   "license": "MIT",
