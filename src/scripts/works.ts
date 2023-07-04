@@ -32,7 +32,7 @@ export class WorkDetailPageScript extends PageScript {
         window.open(
           'https://twitter.com/intent/tweet?text=' +
             encodeURIComponent(
-              workTitle + 'の視聴ステータスを「' + kind[statusKind] + '」にしました',
+              workTitle + ' の視聴ステータスを「' + kind[statusKind] + '」にしました',
             ) +
             '&url=' +
             encodeURIComponent(url),
@@ -93,7 +93,7 @@ export class WorksListPageScript extends PageScript {
           window.open(
             'https://twitter.com/intent/tweet?text=' +
               encodeURIComponent(
-                workTitle + 'の視聴ステータスを「' + kind[statusKind] + '」にしました',
+                workTitle + ' の視聴ステータスを「' + kind[statusKind] + '」にしました',
               ) +
               '&url=' +
               encodeURIComponent(url),
