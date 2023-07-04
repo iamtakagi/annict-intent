@@ -1,24 +1,16 @@
 {
-  "name": "webext-template",
+  "name": "webext-annict-intent-tweet",
   "author": "iamtakagi",
-  "manifest_version": 3,
-  "version": "0.0.5",
+  "manifest_version": 2,
+  "version": "0.0.0",
   "description": "",
   "permissions": [],
   "content_scripts": [
     {
-      "matches": ["https://google.co.jp/"],
+      "matches": ["https://annict.com/*"],
       "js": ["content.js"],
       "run_at": "document_end"
     }
   ],
-  "web_accessible_resources": [{
-    "resources": [
-      "inject.js"
-    ],
-    "matches": [
-      "https://google.co.jp/*"
-    ]
-  }]
-
+  "web_accessible_resources": ["inject.js"]
 }
