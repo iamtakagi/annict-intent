@@ -1,0 +1,50 @@
+{
+  "name": "webext-template",
+  "packageManager": "pnpm@8.3.1",
+  "author": "iamtakagi",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "format": "pnpm run lint:prettier --write",
+    "lint:eslint": "eslint . --ext \".js,.jsx,.ts,.tsx\"",
+    "lint:prettier": "prettier --check \"**/*.{js,ts,tsx,css,json,yaml,md}\"",
+    "lintfix": "run-s 'lintfix:*' 'format'",
+    "lintfix:eslint": "pnpm run lint:eslint --fix",
+    "test": "jest",
+    "bundle:production": "cross-env NODE_ENV=production webpack --config webpack.config.ts --mode production",
+    "bundle:development": "cross-env NODE_ENV=development webpack --config webpack.config.ts --mode development",
+    "pack:development": "cd dist && zip ../builds/$(date +%Y%m%d_%H%M%S).zip *.*",
+    "build:development": "pnpm run bundle:development && cd dist && pnpm run pack:development"
+  },
+  "eslint": {
+    "extends": [
+      "@iamtakagi"
+    ],
+    "parserOptions": {
+      "project": [
+        "./tsconfig.json"
+      ]
+    }
+  },
+  "prettier": "@iamtakagi/prettier-config",
+  "devDependencies": {
+    "@iamtakagi/eslint-config": "^1.0.0",
+    "@iamtakagi/prettier-config": "^1.0.3",
+    "@types/jest": "^29.5.2",
+    "@types/webextension-polyfill": "^0.10.1",
+    "@types/webpack": "^5.28.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.44.0",
+    "jest": "^29.5.0",
+    "prettier": "^2.8.8",
+    "ts-jest": "^29.1.1",
+    "ts-loader": "^9.4.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "webextension-polyfill": "^0.10.0",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
+  }
+}

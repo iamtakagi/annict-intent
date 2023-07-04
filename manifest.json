@@ -1,0 +1,24 @@
+{
+  "name": "webext-template",
+  "author": "iamtakagi",
+  "manifest_version": 3,
+  "version": "0.0.5",
+  "description": "",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["https://google.co.jp/"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": [
+      "inject.js"
+    ],
+    "matches": [
+      "https://google.co.jp/*"
+    ]
+  }]
+
+}
