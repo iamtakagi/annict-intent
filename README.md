@@ -1,4 +1,4 @@
-# webext-template
+# webext-annict-intent-tweet
 
 ## Setup
 
