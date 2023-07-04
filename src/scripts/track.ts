@@ -44,7 +44,7 @@ export class TrackPageScript extends PageScript {
         const url = 'https://annict.com/works/' + workId + '/episodes/' + episodeId;
         window.open(
           'https://twitter.com/intent/tweet?text=' +
-            encodeURIComponent(workTitle + 'の' + episodeTitle + 'を見ました') +
+            encodeURIComponent(workTitle + ' ' + episodeTitle + ' を見ました') +
             '&url=' +
             encodeURIComponent(url),
         );
