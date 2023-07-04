@@ -2,9 +2,9 @@ import { kind, validate } from '../types/kind';
 import { PageScript } from './base';
 
 // https://annict.com/works/^[0-9]+$
-export class WorksPageScript extends PageScript {
+export class WorkDetailPageScript extends PageScript {
   get name(): string {
-    return 'WorksPageScript';
+    return 'WorkDetailPageScript';
   }
 
   validatePath(url: URL): boolean {
@@ -59,6 +59,6 @@ export class WorksListPageScript extends PageScript {
   }
 
   bindEvents(): void {
-    
+
   }
 }

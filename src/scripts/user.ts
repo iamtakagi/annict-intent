@@ -2,16 +2,17 @@ import { kind, validate } from '../types/kind';
 import { PageScript } from './base';
 
 // https://annict.com/@username
-export class UserPageScript extends PageScript {
+export class UserProfilePageScript extends PageScript {
   get name(): string {
-    return 'UserPageScript';
+    return 'UserProfilePageScript';
   }
 
   validatePath(url: URL): boolean {
     return url.pathname.startsWith('/@') && url.pathname.split('/').length === 2;
   }
 
-  bindEvents(): void {}
+  bindEvents(): void {
+  }
 }
 
 // https://annict.com/@username/records

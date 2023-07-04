@@ -1,8 +1,8 @@
-import { WorksListPageScript, WorksPageScript } from '../../src/scripts/works';
+import { WorkDetailPageScript, WorksListPageScript } from '../../src/scripts/works';
 
 describe('scripts/works.test.ts', () => {
   test('パスがマッチする', () => {
-    expect(new WorksPageScript().validatePath(new URL('https://annict.com/works/1234567890'))).toBe(
+    expect(new WorkDetailPageScript().validatePath(new URL('https://annict.com/works/1234567890'))).toBe(
       true,
     );
   });
