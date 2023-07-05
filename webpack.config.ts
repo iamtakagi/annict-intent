@@ -38,6 +38,8 @@ const config: webpack.Configuration = {
   resolve: {
     extensions: ['.ts', '.js'],
   },
+  // ES5 (IE11 対応)
+  target: ["web", "es5"],
 };
 
 export default config;
