@@ -14,8 +14,10 @@
     "test": "jest",
     "bundle:production": "cross-env NODE_ENV=production webpack --config webpack.config.ts --mode production",
     "bundle:development": "cross-env NODE_ENV=development webpack --config webpack.config.ts --mode development",
-    "pack:development": "cd dist && zip ../builds/$(date +%Y%m%d_%H%M%S).zip *.*",
-    "build:development": "pnpm run bundle:development && cd dist && pnpm run pack:development"
+    "pack:development:darwin": "cd dist && zip ../builds/$(date +%Y%m%d_%H%M%S).zip *.*",
+    "pack:development:win": "cd dist && zip ../builds/%date:~0,4%%date:~5,2%%date:~8,2%.zip *.*",
+    "build:development:darwin": "pnpm run bundle:development && cd dist && pnpm run pack:development:darwin",
+    "build:development:win": "pnpm run bundle:development && cd dist && pnpm run pack:development:win"
   },
   "eslint": {
     "extends": [
