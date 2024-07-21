@@ -13,17 +13,15 @@ const main = async (url = new URL(location.href)) => {
       const action = button.getAttribute('data-action');
       if (action == null || action.length < 0) return;
       if (action === 'status-select-dropdown#change') {
-        const status = button.getAttribute('data-status-kind');
-        console.log(status);
-        if (status === null || status == undefined) return;
-        if (typeof status !== 'string') return;
-        if (!status) return;
-        const foundStatus = Status[status as keyof typeof Status];
-        console.log(foundStatus);
+        const dataStatusKind = button.getAttribute('data-status-kind');
+        if (dataStatusKind === null || dataStatusKind == undefined) return;
+        if (typeof dataStatusKind !== 'string') return;
+        if (!dataStatusKind) return;
+        const statusKind = Status[dataStatusKind as keyof typeof Status];
         const workTitle = document.querySelector('h1.fw-bold > a:nth-child(1)')?.innerHTML || '';
         window.open(
           'https://x.com/intent/tweet?text=' +
-            encodeURIComponent(workTitle + ' の視聴ステータスを「' + foundStatus + '」にしました') +
+            encodeURIComponent(workTitle + ' の視聴ステータスを「' + statusKind + '」にしました') +
             '&url=' +
             encodeURIComponent(location.href),
         );
