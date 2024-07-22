@@ -3,7 +3,7 @@
     "target": "ESNext",
     "module": "CommonJS",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "typeRoots": ["node_modules/@types"],
+    "typeRoots": ["node_modules/@types", "node_modules/web-ext-types"],
     "outDir": "./dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

@@ -8,7 +8,8 @@ const config: webpack.Configuration = {
   mode: isProduction ? 'production' : 'development',
   entry: {
     content: path.resolve(__dirname, 'src', 'content.ts'),
-    inject: path.resolve(__dirname, 'src', 'inject.ts'),
+    popup: path.resolve(__dirname, 'src', 'popup.ts'),
+    settings: path.resolve(__dirname, 'src', 'settings.ts'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -18,10 +19,13 @@ const config: webpack.Configuration = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'node_modules/webextension-polyfill/dist/browser-polyfill.js',
+          from: 'manifest.json',
         },
         {
-          from: 'manifest.json',
+          from: 'ui/popup.html',
+        },
+        {
+          from: 'ui/settings.html',
         }
       ],
     }),

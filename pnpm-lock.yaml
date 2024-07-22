@@ -10,9 +10,6 @@ devDependencies:
   '@types/jest':
     specifier: ^29.5.2
     version: 29.5.2
-  '@types/webextension-polyfill':
-    specifier: ^0.10.1
-    version: 0.10.1
   '@types/webpack':
     specifier: ^5.28.1
     version: 5.28.1(webpack-cli@5.1.4)
@@ -43,9 +40,9 @@ devDependencies:
   typescript:
     specifier: ^5.1.6
     version: 5.1.6
-  webextension-polyfill:
-    specifier: ^0.10.0
-    version: 0.10.0
+  web-ext-types:
+    specifier: ^3.2.1
+    version: 3.2.1
   webpack:
     specifier: ^5.88.1
     version: 5.88.1(webpack-cli@5.1.4)
@@ -930,10 +927,6 @@ packages:
 
   /@types/stack-utils@2.0.1:
     resolution: {integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==}
-    dev: true
-
-  /@types/webextension-polyfill@0.10.1:
-    resolution: {integrity: sha512-Sdg+E2F5JUbhkE1qX15QUxpyhfMFKRGJqND9nb1C0gNN4NR7kCV31/1GvNbg6Xe+m/JElJ9/lG5kepMzjGPuQw==}
     dev: true
 
   /@types/webpack@5.28.1(webpack-cli@5.1.4):
@@ -4232,8 +4225,8 @@ packages:
       graceful-fs: 4.2.11
     dev: true
 
-  /webextension-polyfill@0.10.0:
-    resolution: {integrity: sha512-c5s35LgVa5tFaHhrZDnr3FpQpjj1BB+RXhLTYUxGqBVN460HkbM8TBtEqdXWbpTKfzwCcjAZVF7zXCYSKtcp9g==}
+  /web-ext-types@3.2.1:
+    resolution: {integrity: sha512-oQZYDU3W8X867h8Jmt3129kRVKklz70db40Y6OzoTTuzOJpF/dB2KULJUf0txVPyUUXuyzV8GmT3nVvRHoG+Ew==}
     dev: true
 
   /webpack-cli@5.1.4(webpack@5.88.1):
