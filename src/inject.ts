@@ -1,7 +1,5 @@
+import { ANNICT_TOKEN, ANNICT_USERNAME } from './constants';
 import { Status } from './status';
-
-const ANNICT_TOKEN = 'qhsHgZ-oqtZEISI6N8aKpgz_yzAc_xTNP3mw4DshPFg'; // read only
-const ANNICT_USERNAME = 'iamtakagi';
 
 const main = async (url = new URL(location.href)) => {
   if (url.pathname.startsWith('/works')) {
