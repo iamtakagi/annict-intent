@@ -5,9 +5,7 @@ const main = async (url = new URL(location.href)) => {
   if (url.pathname.startsWith('/works')) {
     const workId = url.pathname.split('/')[2];
     const worksRes = await (
-      await fetch('https://api.annict.com/v1/works?filter_ids=' + workId, {
-        headers: { Authorization: `Bearer: ${ANNICT_TOKEN}` },
-      })
+      await fetch(`https://api.annict.com/v1/works?access_token=${ANNICT_TOKEN}&filter_ids=${workId}`)
     ).json();
     if (worksRes == null) return;
     const work = worksRes.works[0];
