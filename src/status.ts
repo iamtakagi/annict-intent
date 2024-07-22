@@ -6,5 +6,11 @@ export const Status = {
   on_hold: '一時中断',
   dropped: '視聴中止',
 } as const;
-export const Statuses = [Status.no_status, Status.plan_to_watch, Status.watching, Status.completed, Status.dropped] as const;
+export const Statuses = [
+  Status.no_status,
+  Status.plan_to_watch,
+  Status.watching,
+  Status.completed,
+  Status.dropped,
+] as const;
 export type Status = (typeof Status)[keyof typeof Status];
