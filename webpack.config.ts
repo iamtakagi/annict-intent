@@ -9,7 +9,7 @@ const config: webpack.Configuration = {
   entry: {
     content: path.resolve(__dirname, 'src', 'content.ts'),
     popup: path.resolve(__dirname, 'src', 'popup.ts'),
-    settings: path.resolve(__dirname, 'src', 'settings.ts'),
+    option: path.resolve(__dirname, 'src', 'option.ts'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -19,13 +19,16 @@ const config: webpack.Configuration = {
     new CopyWebpackPlugin({
       patterns: [
         {
+          from: 'LICENSE'
+        },
+        {
           from: 'manifest.json',
         },
         {
           from: 'ui/popup.html',
         },
         {
-          from: 'ui/settings.html',
+          from: 'ui/option.html',
         }
       ],
     }),

@@ -1,4 +1,4 @@
-# webext-annict-intent-tweet
+# annict-intent
 
 ## Currently supported pages
 - `/works/^[0-9]+$`

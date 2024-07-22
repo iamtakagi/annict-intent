@@ -1,8 +1,8 @@
 {
-  "name": "annict-intent-tweet",
+  "name": "annict-intent",
   "author": "iamtakagi",
   "manifest_version": 2,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "permissions": [
     "https://api.annict.com/*",
@@ -18,14 +18,13 @@
   ],
   "applications": {
     "gecko": {
-      "id": "annict-intent-tweet@addons.iamtakagi.net"
+      "id": "annict-intent@addons.iamtakagi.net"
     }
   },
   "options_ui": {
-    "page": "settings.html"
+    "page": "option.html"
   },
   "browser_action": {
     "default_popup": "popup.html"
-  },
-  "content_security_policy": "script-src 'self' 'unsafe-eval'"
+  }
 }

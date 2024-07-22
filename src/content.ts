@@ -2,6 +2,7 @@ import { Status } from './status';
 
 const main = async (url = new URL(location.href)) => {
   const accessToken = (await browser.storage.sync.get("accessToken"))["accessToken"]
+  if (!accessToken) return;
   if (url.pathname.startsWith('/works')) {
     const workId = url.pathname.split('/')[2];
     const worksRes = await (
@@ -74,8 +75,14 @@ const main = async (url = new URL(location.href)) => {
   }
 };
 
-window.addEventListener('load', () => {
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    main().catch(e => {
+      console.error(e);
+    });
+  });
+} else {
   main().catch(e => {
     console.error(e);
   });
-});
+}
